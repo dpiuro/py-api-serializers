@@ -7,7 +7,11 @@ from cinema.views import (
     MovieViewSet,
     ActorViewSet,
     CinemaHallViewSet,
-    MovieSessionViewSet)
+    MovieSessionViewSet
+)
+
+
+app_name = "cinema"
 
 router = routers.DefaultRouter()
 router.register("genres", GenreViewSet,
