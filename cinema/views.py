@@ -30,7 +30,7 @@ class CinemaHallViewSet(viewsets.ModelViewSet):
 
 
 class MovieViewSet(viewsets.ModelViewSet):
-    queryset = Movie.objects.prefetch_related("actors", "genres").all()
+    queryset = Movie.objects.prefetch_related("actors", "genres")
 
     def get_serializer_class(self):
         if self.action == "list":

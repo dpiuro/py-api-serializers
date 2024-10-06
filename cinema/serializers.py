@@ -47,12 +47,16 @@ class MovieSerializer(serializers.ModelSerializer):
 
 class MovieListSerializer(MovieSerializer):
 
-    genres = serializers.SlugRelatedField(many=True,
-                                          read_only=True,
-                                          slug_field="name")
-    actors = serializers.SlugRelatedField(many=True,
-                                          read_only=True,
-                                          slug_field="full_name")
+    genres = serializers.SlugRelatedField(
+        many=True,
+        read_only=True,
+        slug_field="name"
+    )
+    actors = serializers.SlugRelatedField(
+        many=True,
+        read_only=True,
+        slug_field="full_name"
+    )
 
 
 class MovieRetrieveSerializer(MovieSerializer):
@@ -84,7 +88,8 @@ class MovieSessionListSerializer(MovieSessionSerializer):
             "show_time",
             "movie_title",
             "cinema_hall_name",
-            "cinema_hall_capacity")
+            "cinema_hall_capacity"
+        )
 
 
 class MovieSessionRetrieveSerializer(MovieSessionSerializer):
